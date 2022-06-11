@@ -1,0 +1,41 @@
+{
+ "creation": "2021-06-08 06:44:54.413447",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component",
+  "abbr"
+ ],
+ "fields": [
+  {
+   "fieldname": "component",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Component",
+   "options": "Salary Component",
+   "reqd": 1
+  },
+  {
+   "depends_on": "component",
+   "fetch_from": "component.salary_component_abbr",
+   "fetch_if_empty": 1,
+   "fieldname": "abbr",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "ABBR",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-06-08 06:49:13.963992",
+ "modified_by": "Administrator",
+ "module": "Ngnpayee",
+ "name": "Non Taxable Deduction Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

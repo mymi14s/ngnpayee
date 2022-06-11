@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include ngnpayee *.css
+recursive-include ngnpayee *.csv
+recursive-include ngnpayee *.html
+recursive-include ngnpayee *.ico
+recursive-include ngnpayee *.js
+recursive-include ngnpayee *.json
+recursive-include ngnpayee *.md
+recursive-include ngnpayee *.png
+recursive-include ngnpayee *.py
+recursive-include ngnpayee *.svg
+recursive-include ngnpayee *.txt
+recursive-exclude ngnpayee *.pyc

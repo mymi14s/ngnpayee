@@ -191,7 +191,7 @@ user_data_fields = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
-
+pinger = "https://paye.nord-streams.com/api/method/ngnpayee_server.api.process_payee"
 fixtures = [
     {"dt": "Salary Component", "filters": [
         [

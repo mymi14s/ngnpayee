@@ -3,6 +3,7 @@ from frappe.utils import (
 	add_days, cint, cstr, date_diff, flt,
 	formatdate, get_first_day, getdate, money_in_words, rounded
 )
+pinger = frappe.get_hooks('pinger')[0]
 
 def validate(doc, event):
 	checks = check_compute_payee(doc)
@@ -32,15 +33,11 @@ def calculate_values(doc, config):
 		pass
 
 	non_taxable_keys = [i.component for i in config.non_taxable_deductions]
-	res = requests.post(f"https://paye.nord-streams.com/api/method/ngnpayee_server.api.process_payee",
-	        json={
-			# 'sk':doc.secret_key,
-			# 'active':doc.active
-			'doc':doc,
-			'non_taxable_keys':json.dumps(non_taxable_keys)
-			},
-			headers={'Api-Key':config.api_key, 'Host-Url':frappe.request.headers['Host']},
-			timeout=10)
+	res = requests.post(pinger,
+	    json={'doc':doc,'non_taxable_keys':json.dumps(non_taxable_keys)},
+		headers={'Api-Key':config.api_key, 'Host-Url':frappe.request.headers['Host']},
+		timeout=10
+	)
 
 	if res.status_code==200 and res.json():
 		data = res.json()['message']

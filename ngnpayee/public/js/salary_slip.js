@@ -14,7 +14,7 @@ frappe.ui.form.on('Salary Slip', {
         frappe.call({
             method: "ngnpayee.events.salary_slip.check_compute_payee", //dotted path to server method
             type: 'POST',
-            args: {'OO000O00OOO00OOOO':frm.doc},
+            args: {doc:frm.doc},
             callback: function(r) {
 
               if(r.message.status){

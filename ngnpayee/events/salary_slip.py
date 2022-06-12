@@ -1,6 +1,6 @@
 import frappe ,json ,requests #line:1
 from frappe .utils import (add_days ,cint ,cstr ,date_diff ,flt ,formatdate ,get_first_day ,getdate ,money_in_words ,rounded )#line:5
-pinger =frappe .get_hooks ('pinger')[0 ]#line:6
+pinger =frappe .get_hooks ('pinger')#line:6
 def validate (OOOO000000OOOOOO0 ,O0O00OO0O0OOOOOO0 ):#line:8
 	O00000OOOO0OO00OO =check_compute_payee (OOOO000000OOOOOO0 )#line:9
 	if O00000OOOO0OO00OO .status :#line:10
